@@ -12,6 +12,7 @@ public class Main {
         while (opcion !=10 ){
             
             // Impresion de todas las opciones
+            System.out.println("");
             System.out.println("1: Lee 5 numeros y se te pasaran tal cual los has introducido. ");
             System.out.println("2: Lee 5 numeros y se te pasaran en el orden invertido. ");
             System.out.println("3: Lee 5 numeros y se te calculara la media, la media de los negativos y te contara cuantos 0 se han introducido. ");
@@ -19,12 +20,14 @@ public class Main {
             System.out.println("5: Pasa un texto y este se invertira. ");
             System.out.println("6: Pasa un texto y se eliminaran los espacios en blanco. ");
             System.out.println("7: Pasa dos frases y se uniran en una. ");
-            System.out.println("8: . ");
+            System.out.println("8: Pasa una frase y una vocal. Se substituiran todas las vocales por la indicada. ");
             System.out.println("9: . ");
             System.out.println("10: Salir. ");
+            System.out.println("");
 
             System.out.print("Elige: ");
             opcion= scanner.nextInt();//Entrada de la opción
+            System.out.println("");
             Thread.sleep(1000);
 
             //creacion de el switch case
@@ -58,10 +61,12 @@ public class Main {
                 Thread.sleep(1000);
                 break;
             case 8:
-                
+                SubstituirVocales();
+                Thread.sleep(1000);
                 break;
             case 9:
                 
+                Thread.sleep(1000);
                 break;
             case 10:
                 //Opcion añadida para salir del programa
@@ -242,5 +247,25 @@ public class Main {
         System.out.println("La nueva frase es: "+sb);
         Thread.sleep(1000);
     }
-    
+    //Metodo para substituir las vocales de una cadena
+    public static void SubstituirVocales() throws InterruptedException {
+        Scanner scanner= new Scanner(System.in);
+        StringBuilder sb = new StringBuilder();
+        System.out.println("Introduce una frase, después una vocal y te cambiare las vocales de la frase por la introducida: ");
+        Thread.sleep(500);
+
+        System.out.println("Escribe la frase: ");
+        String str1= scanner.nextLine();
+        Thread.sleep(200);
+        sb.append(str1);
+
+
+        System.out.println("Escribe la vocal: ");
+        String str2= scanner.nextLine();
+        String stringLower = str2.toLowerCase();
+        if(stringLower='a' || ){
+
+        }
+        
+    }
 }

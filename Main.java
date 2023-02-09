@@ -3,6 +3,7 @@ package Ejercicio1Programación.Ejerecicio1Programacion;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.lang.Thread;
+import java.net.PortUnreachableException;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
@@ -16,8 +17,8 @@ public class Main {
             System.out.println("3: Lee 5 numeros y se te calculara la media, la media de los negativos y te contara cuantos 0 se han introducido. ");
             System.out.println("4: Pasa un texto y se contaran la cantidad de caracteres. ");
             System.out.println("5: Pasa un texto y este se invertira. ");
-            System.out.println("6: . ");
-            System.out.println("7: . ");
+            System.out.println("6: Pasa un texto y se eliminaran los espacios en blanco. ");
+            System.out.println("7: Pasa dos frases y se uniran en una. ");
             System.out.println("8: . ");
             System.out.println("9: . ");
             System.out.println("10: Salir. ");
@@ -53,7 +54,8 @@ public class Main {
                 Thread.sleep(1000);
                 break;
             case 7:
-                
+                ConcatenarCadenas();
+                Thread.sleep(1000);
                 break;
             case 8:
                 
@@ -64,6 +66,7 @@ public class Main {
             case 10:
                 //Opcion añadida para salir del programa
                 System.out.println("Has salido del programa.");
+                scanner.close();
                 break;
             default :
                 //Opcion que saltara si pones cualquier cosa que no sea un valor del case
@@ -95,11 +98,10 @@ public class Main {
             
             // bucle para imprimir los numeros introducidos en orden
             System.out.println("Estos son los numero introducidos: ");
-            for (int i= 0; i>=numeros.size(); i--){
+            for (int i= 0; i>=numeros.size(); i++){
                 System.out.print(numeros.get(i)+" ");
             }
             System.out.println("");
-            scanner.close();
         }
     
         //metodo para Imprimir de forma inversa 5 numeros enteros pasado por parametros
@@ -125,7 +127,6 @@ public class Main {
             System.out.print(numeros.get(i)+" ");
         }
         System.out.println("");
-        scanner.close();
     
     }
 
@@ -144,7 +145,6 @@ public class Main {
             contador++; //suma para aumentar el contador
             Thread.sleep(500);
         }    
-        scanner.close();
 
         //Calcular la media positiva
         int suma= 0;
@@ -188,7 +188,6 @@ public class Main {
         }
         System.out.println("Tu texto tiene una cantidad de "+contador+" caracteres");
         Thread.sleep(500);
-        scanner.close();
     }
 
     //Metodo para invertir un texto 
@@ -204,7 +203,6 @@ public class Main {
         System.out.println("El texto es: "+sb.toString());
 
         Thread.sleep(1000);
-        scanner.close();
     }
     
     //Metodo para eliminar espacios en blanco
@@ -217,11 +215,31 @@ public class Main {
 
 
         for(int i=0; i< str.length();i++){
-            if(str.charAt(i) != ' '){
-                sb.append(str.charAt(i));
+            if(str.charAt(i) != ' '){// mira que el caracter no sea un espacio en blanco y si es asi
+                sb.append(str.charAt(i)); //Añade el caracter al strinbuilder creado
             }
         }
         System.out.println("La frase es: "+sb);
+        Thread.sleep(1000);
+    }
+
+    //Metodo para concatenar 2 cadenas pasadas por parametros
+    public static void ConcatenarCadenas()throws InterruptedException {
+        Scanner scanner= new Scanner(System.in);
+        StringBuilder sb = new StringBuilder();
+        System.out.println("Introduce dos cadenas, después te las devolveremos en una cadena: ");
+        Thread.sleep(500);
+
+        System.out.println("Escribe la primera cadena: ");
+        String str1= scanner.nextLine();
+        Thread.sleep(200);
+        sb.append(str1);
+        sb.append(" ");
+        System.out.println("Escribe la segunda cadena: ");
+        String str2= scanner.nextLine();
+        sb.append(str2);
+
+        System.out.println("La nueva frase es: "+sb);
         Thread.sleep(1000);
     }
     

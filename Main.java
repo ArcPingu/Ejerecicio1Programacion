@@ -1,3 +1,4 @@
+package Ejercicio1Programación.Ejerecicio1Programacion;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -14,7 +15,7 @@ public class Main {
             System.out.println("2: Lee 5 numeros y se te pasaran en el orden invertido. ");
             System.out.println("3: Lee 5 numeros y se te calculara la media, la media de los negativos y te contara cuantos 0 se han introducido. ");
             System.out.println("4: Pasa un texto y se contaran la cantidad de caracteres. ");
-            System.out.println("5: . ");
+            System.out.println("5: Pasa un texto y este se invertira. ");
             System.out.println("6: . ");
             System.out.println("7: . ");
             System.out.println("8: . ");
@@ -44,10 +45,12 @@ public class Main {
                 Thread.sleep(1000);
                 break;
             case 5:
-                
+                InvertirTexto();
+                Thread.sleep(1000);
                 break;
             case 6:
-                
+                EliminarEspaciosBlancos();
+                Thread.sleep(1000);
                 break;
             case 7:
                 
@@ -63,6 +66,7 @@ public class Main {
                 System.out.println("Has salido del programa.");
                 break;
             default :
+                //Opcion que saltara si pones cualquier cosa que no sea un valor del case
                 System.out.println("Opcion Invalida");
                 break;
             }
@@ -169,7 +173,7 @@ public class Main {
         
     }
 
-    //Funcion para contar caracteres de un texto
+    //Metodo para contar caracteres de un texto
     public static void ContarCaracteres() throws InterruptedException{
         Scanner scanner = new Scanner(System.in);
         
@@ -187,6 +191,38 @@ public class Main {
         scanner.close();
     }
 
-    //
+    //Metodo para invertir un texto 
+    public static void InvertirTexto()throws InterruptedException {
+        Scanner scanner= new Scanner(System.in);
+        System.out.println("Introduce el texto que desees, te devolvermos el texto invertido: ");
+        String str= scanner.nextLine();
+        StringBuilder sb = new StringBuilder();// permite construir objetos de tipo String 
+
+        for (int i=str.length() -1 ; i>=0; i--){//bucle para que empieze el string hacia atras
+            sb.append(str.charAt(i));//esto añadira el caracter al stringBuilder
+        }
+        System.out.println("El texto es: "+sb.toString());
+
+        Thread.sleep(1000);
+        scanner.close();
+    }
+    
+    //Metodo para eliminar espacios en blanco
+
+    public static void EliminarEspaciosBlancos()throws InterruptedException {
+        Scanner scanner= new Scanner(System.in);
+        System.out.println("Introduce el texto que desees, te devolvermos el texto sin espacios en blanco: ");
+        String str= scanner.nextLine();
+        StringBuilder sb = new StringBuilder();// permite construir objetos de tipo String 
+
+
+        for(int i=0; i< str.length();i++){
+            if(str.charAt(i) != ' '){
+                sb.append(str.charAt(i));
+            }
+        }
+        System.out.println("La frase es: "+sb);
+        Thread.sleep(1000);
+    }
     
 }

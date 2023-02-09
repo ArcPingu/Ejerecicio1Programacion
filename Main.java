@@ -2,7 +2,6 @@ package Ejercicio1Programación.Ejerecicio1Programacion;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
 import java.lang.Thread;
 
 public class Main {
@@ -73,6 +72,7 @@ public class Main {
         scanner.close();
     }
         
+    //metodo para Imprimir de forma ordeada 5 numeros enteros pasado por parametros
     public static void mostrarEnOrden() throws InterruptedException {
             Integer contador= 0; //variable para asegurarnos de un bucle con 5 numeros
             ArrayList<Integer> numeros= new ArrayList<>();//Declaracion de la array
@@ -99,6 +99,7 @@ public class Main {
             scanner.close();
         }
     
+        //metodo para Imprimir de forma inversa 5 numeros enteros pasado por parametros
     public static void OrdenInverso() throws InterruptedException{
         Integer contador= 0; //variable para asegurarnos de un bucle con 5 numeros
         ArrayList<Integer> numeros= new ArrayList<>();//Declaracion de la array
@@ -124,6 +125,8 @@ public class Main {
         scanner.close();
     
     }
+
+    // metodo para hacer media y contar los 0 introducidos
     public static void MediaYCeros() throws InterruptedException{
         Integer contador= 0; //variable para asegurarnos de un bucle con 5 numeros
         ArrayList<Integer> numeros= new ArrayList<>();//Declaracion de la array
@@ -142,19 +145,25 @@ public class Main {
 
         //Calcular la media positiva
         int suma= 0;
-        for (int i =0; i<numeros.size(); i++){
+        for (int i =0; i<numeros.size(); i++){ //bucle para sumar los enteros de la lista
             suma += numeros.get(i);
         }
-        int media = suma  / numeros.size();
+        int media = suma  / numeros.size(); //tomamos la suma de los numeros y lo dividimos por el tamaño de la array para conseguir la media
         System.out.println("La media es: "+media);
         
+        //Calcular la media de los negativos 
+
+
+
+
+
+
+
         //Contar 0 introducidos
-        int ceros= 0;
+        int ceros= 0; //contador de 0
         for (int i =0; i<numeros.size(); i++){
-            if (numeros.get(i)==0){
-                ceros++;
-            }else if(i == numeros.size()){
-                System.out.println("Ya se han contado todos los 0");
+            if (numeros.get(i)==0){//Aqui si el algun entero es 0 se sumara al contador
+                ceros++; 
             }
         }
         System.out.println("Hay un total de "+ceros);
@@ -168,14 +177,17 @@ public class Main {
         int contador=0;
         System.out.println("Introduce el texto que desees, te devolvermos el numero de caractes de el mismo: ");
         String str= scanner.nextLine();
+
         for(int i=0; i< str.length();i++){
-            if(str.charAt(i) != ' '){
-                contador++;
+            if(str.charAt(i) != ' '){//charat nos permite comprobar un caracter en una string
+                contador++;//si el caracter no es espacio se sumara 1 al contador
             }
         }
         System.out.println("Tu texto tiene una cantidad de "+contador+" caracteres");
         Thread.sleep(500);
         scanner.close();
     }
+
+    //
     
 }

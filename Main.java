@@ -108,9 +108,9 @@ public class Main {
             }
         System.out.println("");
         Thread.sleep(1000);
-        }
+    }
     
-        //metodo para Imprimir de forma inversa 5 numeros enteros pasado por parametros
+    //metodo para Imprimir de forma inversa 5 numeros enteros pasado por parametros
     public static void OrdenInverso() throws InterruptedException{
         Integer contador= 0; //variable para asegurarnos de un bucle con 5 numeros
         ArrayList<Integer> numeros= new ArrayList<>();//Declaracion de la array

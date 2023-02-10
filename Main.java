@@ -17,9 +17,9 @@ public class Main {
             System.out.println("2: Lee 5 numeros y se te pasaran en el orden invertido. ");
             System.out.println("3: Lee 5 numeros y se te calculara la media, la media de los negativos y te contara cuantos 0 se han introducido. ");
             System.out.println("4: Pasa un texto y se contaran la cantidad de caracteres. ");
-            System.out.println("5: Pasa un texto y este se invertira. ");
+            System.out.println("5: Pasa un texto y este texto se invertira. ");
             System.out.println("6: Pasa un texto y se eliminaran los espacios en blanco. ");
-            System.out.println("7: Pasa dos frases y se uniran en una. ");
+            System.out.println("7: Pasa dos frases y se uniran en una unica frase. ");
             System.out.println("8: Pasa una frase y una vocal. Se substituiran todas las vocales por la indicada. ");
             System.out.println("9: Pasa una frase y se te devolvera el codigo ASCII de cada uno de los caracteres de la frase. ");
             System.out.println("10: Salir. ");

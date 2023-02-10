@@ -15,7 +15,7 @@ El proyecto consiste en un programa de consola que permite a un usuario elegir e
 <li>Pasa un texto y cuenta la cantidad de caracteres.</li>
 <li>Pasa un texto y lo invierte.</li>
 <li>Pasa un texto y elimina los espacios en blanco.</li>
-<li>Pasa dos frases y las une en una.</li>
+<li>Pasa dos frases y las une en una unica frase.</li>
 <li>Pasa una frase y una vocal. Reemplaza todas las vocales por la vocal indicada.</li>
 <li>Pasa una frase y muestra el código ASCII de cada carácter de la frase.</li>
 <li>Salir del programa.</li>

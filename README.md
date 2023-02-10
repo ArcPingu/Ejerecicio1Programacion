@@ -3,7 +3,7 @@
 ### Samuel Guindal Pérez
 
 ## README
-Este archivo README esta creado para el proyecto Ejercicio1Programación.
+Este archivo README esta creado para el proyecto Ejercicio1Programación en java.
 
 ### Explicación del ejercicio
 El proyecto consiste en un programa de consola que permite a un usuario elegir entre diferentes opciones y realizar diferentes acciones con números y cadenas de texto. El usuario puede elegir entre las siguientes opciones:
@@ -30,6 +30,8 @@ Este método en Java imprime 5 números enteros que son pasados por parámetros 
 
 #### Metodo para imprimir 5 numeros en Orden Invertido.
 Este método en Java llamado "OrdenInverso" que imprime 5 números enteros en orden inverso. La función utiliza una ArrayList para almacenar los números introducidos por el usuario, los cuales son leídos por un objeto Scanner. Un bucle "while" se utiliza para asegurarse de que se reciban solo 5 números. Después de recibir los 5 números, se muestra un mensaje en pantalla y se imprimen en orden inverso. La ejecución del método se detiene temporalmente antes de finalizar.
+#### Metodo para hacer la media de Positivos, la media de Negativos y contar los 0 introducidos
+Este método en Java, "MediaYCeros", lee 5 números enteros de la consola, conta los ceros introducidos, y calcula la media de los números positivos y negativos. Se usa un bucle while para leer 5 números, y bucles for para contar ceros y calcular las medias. Finalmente, se imprimen los resultados en la consola.
 
 #### Metodo Para convertir texto en ASCII.
 Este método utiliza la clase Scanner de Java para leer una línea de texto escrita por el usuario. Luego, usa un bucle for para recorrer cada carácter en la cadena y convertirlo en su valor ASCII. Se utiliza el método charAt (i) para obtener el carácter en la posición i y el casting (int) para convertirlo en un valor entero. Finalmente, se utiliza la clase StringBuilder para construir una nueva cadena con los valores ASCII separados por un espacio. Finalmente, se muestran en consola la frase original y la nueva frase con los valores ASCII. El método también contiene una llamada a Thread.sleep (1000), lo que hace que el programa se detenga por 1000 milisegundos antes de imprimir en consola.

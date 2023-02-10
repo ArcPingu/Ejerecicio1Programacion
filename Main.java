@@ -136,7 +136,7 @@ public class Main {
     
     }
 
-    // metodo para hacer media y contar los 0 introducidos
+    // metodo para hacer media positiva, negativa y contar los 0 introducidos
     public static void MediaYCeros() throws InterruptedException{
         Integer contador= 0; //variable para asegurarnos de un bucle con 5 numeros
         ArrayList<Integer> numeros= new ArrayList<>();//Declaracion de la array

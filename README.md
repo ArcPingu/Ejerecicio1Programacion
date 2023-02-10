@@ -40,9 +40,9 @@ Este método en Java invierte un texto proporcionado por el usuario. Utiliza Sca
 ### Metodo para eliminar espacios
 Este método en Java "EliminarEspaciosBlancos" elimina los espacios en blanco de un texto proporcionado por el usuario. Se lee la entrada del usuario a través de un objeto Scanner y se guarda en una variable "str". Se usa un objeto StringBuilder para construir el texto sin espacios en blanco, se verifica cada carácter de "str" con una condicional y si no es un espacio en blanco, se añade al objeto StringBuilder. Finalmente, se imprime el texto sin espacios en blanco en la consola y se usa el método "sleep" para esperar un segundo antes de continuar con el resto del programa.
 
-### Metodo para 
+### Metodo para concatenar 2 cadenas pasadas por parametros y unirlas en 1 sola
 
-### Metodo para 
+### Metodo para substituir las vocales de una cadena
 
 ### Metodo para convertir texto en ASCII.
 Este método utiliza la clase Scanner de Java para leer una línea de texto escrita por el usuario. Luego, usa un bucle for para recorrer cada carácter en la cadena y convertirlo en su valor ASCII. Se utiliza el método charAt (i) para obtener el carácter en la posición i y el casting (int) para convertirlo en un valor entero. Finalmente, se utiliza la clase StringBuilder para construir una nueva cadena con los valores ASCII separados por un espacio. Finalmente, se muestran en consola la frase original y la nueva frase con los valores ASCII. El método también contiene una llamada a Thread.sleep (1000), lo que hace que el programa se detenga por 1000 milisegundos antes de imprimir en consola.

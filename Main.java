@@ -3,7 +3,8 @@ package Ejercicio1Programación.Ejerecicio1Programacion;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.lang.Thread;
-import java.net.PortUnreachableException;
+import java.nio.channels.SelectableChannel;
+
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
@@ -21,7 +22,7 @@ public class Main {
             System.out.println("6: Pasa un texto y se eliminaran los espacios en blanco. ");
             System.out.println("7: Pasa dos frases y se uniran en una. ");
             System.out.println("8: Pasa una frase y una vocal. Se substituiran todas las vocales por la indicada. ");
-            System.out.println("9: . ");
+            System.out.println("9: Pasa una frase y se te devolvera el codigo ASCII de cada uno de los caracteres de la frase. ");
             System.out.println("10: Salir. ");
             System.out.println("");
 
@@ -65,7 +66,7 @@ public class Main {
                 Thread.sleep(1000);
                 break;
             case 9:
-                
+                PasarEnAsci();
                 Thread.sleep(1000);
                 break;
             case 10:
@@ -91,7 +92,7 @@ public class Main {
 
             while(contador<5){
                 
-                System.out.println("Introduce 5 numeros, llevas "+contador);
+                System.out.println("Introduce 5 numeros, numeris: "+(contador+1));
                 Integer numero= scanner.nextInt();
                 
                 // array en la posicion que tenga el contador se le introduce el valor que se ha pasado
@@ -103,10 +104,11 @@ public class Main {
             
             // bucle para imprimir los numeros introducidos en orden
             System.out.println("Estos son los numero introducidos: ");
-            for (int i= 0; i>=numeros.size(); i++){
+            for (int i= 0; i<numeros.size(); i++){
                 System.out.print(numeros.get(i)+" ");
             }
-            System.out.println("");
+        System.out.println("");
+        Thread.sleep(1000);
         }
     
         //metodo para Imprimir de forma inversa 5 numeros enteros pasado por parametros
@@ -117,7 +119,7 @@ public class Main {
 
         while(contador<5){
             
-            System.out.println("Introduce 5 numeros, llevas "+contador);
+            System.out.println("Introduce 5 numeros, numero: "+(contador+1));
             Integer numero= scanner.nextInt();
             
             // array en la posicion que tenga el contador se le introduce el valor que se ha pasado
@@ -140,9 +142,10 @@ public class Main {
         Integer contador= 0; //variable para asegurarnos de un bucle con 5 numeros
         ArrayList<Integer> numeros= new ArrayList<>();//Declaracion de la array
         Scanner scanner = new Scanner(System.in);
+
         while(contador<5){
             
-            System.out.println("Introduce 5 numeros, llevas "+contador);
+            System.out.println("Introduce 5 numeros, numero: "+(contador+1));
             Integer numero= scanner.nextInt();
             
             // array en la posicion que tenga el contador se le introduce el valor que se ha pasado
@@ -150,32 +153,45 @@ public class Main {
             contador++; //suma para aumentar el contador
             Thread.sleep(500);
         }    
-
-        //Calcular la media positiva
-        int suma= 0;
-        for (int i =0; i<numeros.size(); i++){ //bucle para sumar los enteros de la lista
-            suma += numeros.get(i);
-        }
-        int media = suma  / numeros.size(); //tomamos la suma de los numeros y lo dividimos por el tamaño de la array para conseguir la media
-        System.out.println("La media es: "+media);
-        
-        //Calcular la media de los negativos 
-
-
-
-
-
-
-
         //Contar 0 introducidos
         int ceros= 0; //contador de 0
         for (int i =0; i<numeros.size(); i++){
-            if (numeros.get(i)==0){//Aqui si el algun entero es 0 se sumara al contador
+            if (numeros.get(i)== 0){//Aqui si el algun entero es 0 se sumara al contador
                 ceros++; 
             }
         }
-        System.out.println("Hay un total de "+ceros);
-        
+        System.out.println("La cantidad de ceros es de "+ceros);
+
+        //Calcular la media positiva
+        int sumaPositivos= 0;
+        int positivos= 0;
+
+        for (int i =0; i<numeros.size(); i++){
+            if (numeros.get(i)>=0){
+                sumaPositivos += numeros.get(i);
+                positivos++;
+            }
+        }
+        int mediaPositivos = 0;
+        if (positivos > 0) {
+            mediaPositivos = sumaPositivos / positivos; 
+        }
+        System.out.println("La media de los positivos es: "+mediaPositivos);
+
+        //Calcular la media de los negativos
+        int sumaNegativos= 0;
+        int negativos= 0;
+        for (int i =0; i<numeros.size(); i++){
+            if (numeros.get(i)<0){
+                sumaNegativos += numeros.get(i);
+                negativos++;
+            }
+        }
+        int mediaNegativos = 0;
+        if (negativos > 0) {
+            mediaNegativos = sumaNegativos / negativos;
+        }
+        System.out.println("La media de los negativos es: "+mediaNegativos);
     }
 
     //Metodo para contar caracteres de un texto
@@ -211,7 +227,6 @@ public class Main {
     }
     
     //Metodo para eliminar espacios en blanco
-
     public static void EliminarEspaciosBlancos()throws InterruptedException {
         Scanner scanner= new Scanner(System.in);
         System.out.println("Introduce el texto que desees, te devolvermos el texto sin espacios en blanco: ");
@@ -247,25 +262,59 @@ public class Main {
         System.out.println("La nueva frase es: "+sb);
         Thread.sleep(1000);
     }
+
     //Metodo para substituir las vocales de una cadena
     public static void SubstituirVocales() throws InterruptedException {
         Scanner scanner= new Scanner(System.in);
         StringBuilder sb = new StringBuilder();
         System.out.println("Introduce una frase, después una vocal y te cambiare las vocales de la frase por la introducida: ");
         Thread.sleep(500);
-
+    
         System.out.println("Escribe la frase: ");
         String str1= scanner.nextLine();
         Thread.sleep(200);
-        sb.append(str1);
-
-
+    
         System.out.println("Escribe la vocal: ");
         String str2= scanner.nextLine();
-        String stringLower = str2.toLowerCase();
-        if(stringLower='a' || ){
-
+        char replaceVowel = str2.toLowerCase().charAt(0);
+    
+        //comprueba si la letra introducida es una vocal
+        if (replaceVowel == 'a' || replaceVowel == 'e' || replaceVowel == 'i' || replaceVowel == 'o' || replaceVowel == 'u') {
+            // recorre el string caracter a caracter
+            for (int i = 0; i < str1.length(); i++) {
+                char currentChar = str1.charAt(i);
+                //Comprueba si la vocal en la frase esta en miniscula y la cambia por la vocal en miniscula
+                if (currentChar == 'a' || currentChar == 'e' || currentChar == 'i' || currentChar == 'o' || currentChar == 'u') {
+                    sb.append(replaceVowel);
+                } 
+                //Comprueba si la vocal en la frase esta en mayuscula y la cambia por la vocal en mayuscula
+                else if (currentChar == 'A' || currentChar == 'E' || currentChar == 'I' || currentChar == 'O' || currentChar == 'U') {
+                    sb.append(Character.toUpperCase(replaceVowel));
+                } else {
+                    sb.append(currentChar);
+                }
+            }
         }
-        
+        System.out.println("La nueva frase es: " + sb);
+        Thread.sleep(1000);
+    }
+    
+    //Metodo para Introducir un texto y devolverlo en su valor en el codigo Ascii
+    public static void PasarEnAsci() throws InterruptedException {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Escribe una frase y te devolvere el codigo ascii de cada caracter: ");
+        String str = scanner.nextLine();
+        StringBuilder asciiValues = new StringBuilder();
+
+        //bucle para recorrer el string y cambiar la letra por su valor Ascii
+        for (int i = 0; i < str.length(); i++) {
+            int asciiValue = (int) str.charAt(i);
+            asciiValues.append(asciiValue).append(" ");
+        }
+
+        Thread.sleep(1000);
+        System.out.println("La frase era: "+str);
+        System.out.println("La nueva frase es: "+asciiValues);
+        Thread.sleep(1000);
     }
 }

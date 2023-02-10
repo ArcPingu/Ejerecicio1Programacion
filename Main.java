@@ -3,7 +3,6 @@ package Ejercicio1Programación.Ejerecicio1Programacion;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.lang.Thread;
-import java.nio.channels.SelectableChannel;
 
 
 public class Main {
